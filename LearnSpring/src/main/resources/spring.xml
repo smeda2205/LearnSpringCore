@@ -2,7 +2,28 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 
 <beans>
-	<bean id="triangle" class="com.learn.spring.Triangle">
-		<property name="type" value="Equilateral" /> <!-- presetting the member variable -->
+<!-- 	<bean id="triangle" class="com.learn.spring.Triangle">
+			<property name="type" value="Equilateral" />  presetting the member variable 
 	</bean>
+ -->	
+ 
+ 	<!-- Changed the above configuration for example 3 to demonstrate constructor injection -->
+	<!-- <bean id="triangle" class="com.learn.spring.Triangle">
+		<constructor-arg value="Equilateral" />
+		<constructor-arg value="10" />
+	</bean> -->
+	
+	<!-- For example 3, To demonstrate how to identify the specific constructor that is supposed to be used
+	using type property -->
+	<!-- <bean id="triangle" class="com.learn.spring.Triangle">
+		<constructor-arg type="java.lang.String" value="20"/>  type is the clue that was passed to identify which constructor to use
+	</bean> 
+	 -->
+	 
+	 <!-- For example 3, There is another way of defining which constructor to use is using index as shown below -->
+	 <bean id="triangle" class="com.learn.spring.Triangle">
+		<constructor-arg index="0" value="Equilateral"/> 
+		<constructor-arg index="1" value="20"/>  
+	</bean>
+	 
 </beans>
