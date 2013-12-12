@@ -56,6 +56,7 @@
 	<!-- Example 5 -->
 	<!-- Inner Bean doesn't require an id (but we can give), as this is always inside another bean and can't be accessed directly. -->
 	<!-- we can even provide aliases using name property -->
+	<!-- 
 	<bean id="triangle" class="com.learn.spring.example5.Triangle" name="triangle-name">
 		<property name="pointA" ref="zeroPoint" />
 		<property name="pointB">
@@ -75,9 +76,34 @@
 	<bean id="zeroPoint" class="com.learn.spring.example5.Point">
 		<property name="x" value="0" />
 		<property name="y" value="0" />
-	</bean>
+	</bean> -->
 	
 	<!-- Example of aliasing. Below is the example for triangle aliasing. -->
-	<alias name="triangle" alias="triangle-alias"/>
+	<!-- <alias name="triangle" alias="triangle-alias"/> -->
 	<!-- End of Example 5 -->
+	
+	<!-- Example 6 -->
+	<bean id="triangle" class="com.learn.spring.example6.Triangle">
+		<property name="points">
+			<list>
+				<ref bean="zeroPoint"/>
+				<ref bean="point2"/>
+				<ref bean="point3"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="zeroPoint" class="com.learn.spring.example6.Point">
+		<property name="x" value="0" />
+		<property name="y" value="0" />
+	</bean>
+	<bean id="point2" class="com.learn.spring.example6.Point">
+		<property name="x" value="20" />
+		<property name="y" value="0" />
+	</bean>
+	<bean id="point3" class="com.learn.spring.example6.Point">
+		<property name="x" value="20" />
+		<property name="y" value="0" />
+	</bean>
+	<!-- End of Example 6 -->
 </beans>
