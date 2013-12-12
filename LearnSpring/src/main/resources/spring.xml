@@ -32,7 +32,8 @@
 	-->
 	
 	<!-- For Example 4, Injecting Objects -->
-	<!-- <bean id="triangle" class="com.learn.spring.example4.Triangle">
+	<!-- 
+	<bean id="triangle" class="com.learn.spring.example4.Triangle">
 		<property name="pointA" ref="zeroPoint" />
 		<property name="pointB" ref="point2" />
 		<property name="pointC" ref="point3" />
@@ -83,7 +84,7 @@
 	<!-- End of Example 5 -->
 	
 	<!-- Example 6 -->
-	<bean id="triangle" class="com.learn.spring.example6.Triangle">
+	<!-- <bean id="triangle" class="com.learn.spring.example6.Triangle">
 		<property name="points">
 			<list>
 				<ref bean="zeroPoint"/>
@@ -104,6 +105,24 @@
 	<bean id="point3" class="com.learn.spring.example6.Point">
 		<property name="x" value="20" />
 		<property name="y" value="0" />
-	</bean>
+	</bean> -->
 	<!-- End of Example 6 -->
+	
+	<!-- Example 7: Autowiring -->
+	<bean id="triangle" class="com.learn.spring.example7.Triangle" autowire="byName">
+	</bean>
+	
+	<bean id="pointA" class="com.learn.spring.example7.Point">
+		<property name="x" value="0" />
+		<property name="y" value="0" />
+	</bean>
+	<bean id="pointB" class="com.learn.spring.example7.Point">
+		<property name="x" value="20" />
+		<property name="y" value="0" />
+	</bean>
+	<bean id="pointC" class="com.learn.spring.example7.Point">
+		<property name="x" value="20" />
+		<property name="y" value="0" />
+	</bean> 
+	<!-- End of Example 7 -->
 </beans>
