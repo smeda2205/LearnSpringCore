@@ -109,7 +109,7 @@
 	<!-- End of Example 6 -->
 	
 	<!-- Example 7: Autowiring -->
-	<bean id="triangle" class="com.learn.spring.example7.Triangle" autowire="byName">
+	<!-- <bean id="triangle" class="com.learn.spring.example7.Triangle" autowire="byName">
 	</bean>
 	
 	<bean id="pointA" class="com.learn.spring.example7.Point">
@@ -123,6 +123,29 @@
 	<bean id="pointC" class="com.learn.spring.example7.Point">
 		<property name="x" value="20" />
 		<property name="y" value="0" />
-	</bean> 
+	</bean>  -->
 	<!-- End of Example 7 -->
+	
+	<!-- Example 8 -->
+	<!-- Here I have defined the scope of triangle as prototype (creates a new bean per every reference), 
+	 default is singleton -->
+	<bean id="triangle" class="com.learn.spring.example8.Triangle" scope="prototype">
+		<property name="pointA" ref="zeroPoint" />
+		<property name="pointB" ref="point2" />
+		<property name="pointC" ref="point3" />
+	</bean>
+	
+	<bean id="zeroPoint" class="com.learn.spring.example8.Point">
+		<property name="x" value="0" />
+		<property name="y" value="0" />
+	</bean>
+	<bean id="point2" class="com.learn.spring.example8.Point">
+		<property name="x" value="20" />
+		<property name="y" value="0" />
+	</bean>
+	<bean id="point3" class="com.learn.spring.example8.Point">
+		<property name="x" value="20" />
+		<property name="y" value="0" />
+	</bean>
+	<!-- End of Example 8 -->
 </beans>
