@@ -19,3 +19,8 @@ There are few other scopes. They are web-aware scopes. Request and Session.
 	Request Scope - New bean per a servlet request.
 	Session Scope - New bean per session.
 	Global Session - New bean per global HTTP session (Used in Portlet context.)
+	
+If a bean is Singleton, all the bean it has internally will also be initialized 
+in the beginning by the application context, even though the internal beans are defined as prototype.
+For example, In this example, Triangle has Point. If we define Triangle as Singleton bean and 
+Point as Prototype bean, since Triangle has Point, the point also will be created when the Triangle is created.
